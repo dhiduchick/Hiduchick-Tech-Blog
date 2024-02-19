@@ -1,4 +1,4 @@
-const newFormHandley = async (event) => {
+const newFormHandler = async (event) => {
     event.preventDefault();
 
     const title = document.querySelector('#blog-title').value.trim();
@@ -20,3 +20,28 @@ const newFormHandley = async (event) => {
         }
     }
 };
+
+const updatePostHandler = async (event) => {
+event.preventDefault();
+if (event.target.hasAttribute('data-update-id')) {
+    const id = event.taget.getAttribute('data-update-id');
+
+    const title = document.getElementById('updatedBlogTitle').value.trim();
+    const content = document.getElementById('updateBlogContent').value.trim();
+
+    const response = await fetch(`/api.blogs/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify({title, content}),
+        headers: {
+            'Content-Types': 'application/json',
+        },
+    });
+
+    if (response.ok) {
+        document.location.replace('/dashboard');
+    } else {
+        alert ('Failed to update');
+    }
+}
+};
+
