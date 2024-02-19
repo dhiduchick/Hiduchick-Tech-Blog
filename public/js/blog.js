@@ -65,3 +65,11 @@ const createPostView = () => {
     const createPostBtnDiv = document.getElementById('createPostBtnDiv').classList.add('hide');
     const createPostDiv = document.getElementById('createPostDiv').classList.remove('hide');
   }
+
+const cancelBtnHandler = (event) => {
+    event.preventDefault();
+    const createPostBtnDiv = document.getElementById('createPostBtnDiv').classList.remove('hide');
+    const createPostDiv = document.getElementById('createPostDiv').classList.add('hide');
+    const titleInput = document.getElementById('project-name').value = "";
+    const descriptionInput = document.getElementById('project-desc').value = "";
+  }
