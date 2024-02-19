@@ -1,0 +1,16 @@
+{{#if posts}}
+{{#each posts as |post| }}
+<div class="row mb-4 mt-4 project justify-content-center">
+  <div class="col-md-5 home-cards layout hover-effect">
+    <h2 class="d-flex justify-content-center">
+      <a class="h2" href="/post/{{post.id}}">{{post.title}}</a>
+    </h2>
+    <p>
+    <p class="d-flex justify-content-center card-desc">Created on {{format_date post.date_created}}</p>
+    <a class="more_link" href="/post/{{post.id}}"></a>
+  </div>
+</div>
+{{/each}}
+{{else}}
+<h2 id="noPosts">Be the trendsetter! Visit your dashboard to make the first post...</h2>
+{{/if}}
