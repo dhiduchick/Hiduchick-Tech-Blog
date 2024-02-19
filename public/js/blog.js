@@ -98,3 +98,45 @@ const cancelEditHandler = () => {
     const editPostBtnDiv = document.getElementById('editPostBtnDiv').classList.remove('hide');
     const updateDeleteDiv = document.getElementById('updateDeleteDiv').classList.add('hide');
   }
+
+  const toggleCreateBtn = document.getElementById('createPostBtn');
+if (toggleCreateBtn) {
+  toggleCreateBtn.addEventListener('click', createPostView);
+}
+
+const cancelCreateBtn = document.getElementById('cancelCreateBtn');
+if (cancelCreateBtn) {
+  cancelCreateBtn.addEventListener('click', cancelBtnHandler)
+}
+
+const toggleEditBtn = document.querySelectorAll('.toggleEdit');
+if (toggleEditBtn) {
+  for (let i = 0; i < toggleEditBtn.length; i++) {
+    toggleEditBtn[i].addEventListener('click', editBtnHandler)
+  }
+}
+
+const toggleUpdateBtn = document.getElementById('updatePostBtn');
+if (toggleUpdateBtn) {
+  toggleUpdateBtn.addEventListener('click', updateViewHandler)
+}
+
+const cancelEditBtn = document.getElementById('cancelEditBtn');
+if (cancelEditBtn) {
+  cancelEditBtn.addEventListener('click', cancelEditHandler)
+}
+
+const updatePost = document.getElementById('submitUpdateBtn');
+if (updatePost) {
+  updatePost.addEventListener('click', updatePostHandler)
+}
+
+const submitPost = document.querySelector('.new-project-form');
+if (submitPost) {
+  submitPost.addEventListener('submit', newFormHandler);
+}
+
+const deletePost = document.querySelector('.project-list');
+if (deletePost) {
+  deletePost.addEventListener('click', delButtonHandler);
+}
