@@ -93,3 +93,8 @@ const cancelUpdateHandler = (event) => {
     const currentPostDiv = document.getElementById('indivPost');
     currentPostDiv.classList.remove('hide');
   }  
+
+const cancelEditHandler = () => {
+    const editPostBtnDiv = document.getElementById('editPostBtnDiv').classList.remove('hide');
+    const updateDeleteDiv = document.getElementById('updateDeleteDiv').classList.add('hide');
+  }
