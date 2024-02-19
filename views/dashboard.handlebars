@@ -6,23 +6,23 @@
 
 <div class="row mt-4 justify-content-center">
 
-  {{#if posts.length}}
-  <div id="currentPostsDiv" class="col-md-6 blog-list justify-content-center">
-    <h3 class="d-flex justify-content-center">Current Posts:</h3>
+  {{#if blogs.length}}
+  <div id="currentBlogsDiv" class="col-md-6 blog-list justify-content-center">
+    <h3 class="d-flex justify-content-center">Current Blogs:</h3>
 
-    {{#each posts as |post|}}
+    {{#each blogs as |blog|}}
     <div class="row mb-2 d-flex justify-content-center">
-      <div id="indivPost" class="container" >
-        <div class="currentPostCard">
-          <h4 class="d-flex justify-content-center"><a class="postTitle hover-effect" href="/post/{{post.id}}">{{post.title}}</a></h4>
+      <div id="indivBlog" class="container" >
+        <div class="currentBlogCard">
+          <h4 class="d-flex justify-content-center"><a class="blogTitle hover-effect" href="/blog/{{blog.id}}">{{blog.title}}</a></h4>
         </div>
-        <div id="editPostBtnDiv" class="container editPostBtnDiv">
-          <button id="editPostBtn" class=" center toggleEdit btn btn-sm btn-danger">EDIT</button>
+        <div id="editBlogBtnDiv" class="container editBlogBtnDiv">
+          <button id="editBlogBtn" class=" center toggleEdit btn btn-sm btn-danger">EDIT</button>
         </div>
         <div id="updateDeleteDiv" class="hide container">
           <div class="center">
-            <button id="updatePostBtn" class="btn btn-sm btn-danger">UPDATE</button>
-            <button id="deletePostBtn" class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
+            <button id="updateBlogBtn" class="btn btn-sm btn-danger">UPDATE</button>
+            <button id="deleteBlogBtn" class="btn btn-sm btn-danger" data-id="{{blog.id}}">DELETE</button>
             <button id="cancelEditBtn" class="btn btn-sm btn-danger">CANCEL</button>
           </div>
         </div>
@@ -31,14 +31,14 @@
         <form id="updateForm" class="hide">
           <div class="form-group">
             <label for="updated-title">Title:</label>
-            <input class="form-control" id="updatedBlogTitle" type="text" name="updated-title" value="{{post.title}}">
+            <input class="form-control" id="updatedBlogTitle" type="text" name="updated-title" value="{{blog.title}}">
           </div>
           <div class="form-group">
             <label for="updated-title">Description:</label>
             <input class="form-control" id="updatedBlogContent" type="text" name="updated-title"
-              value="{{post.content}}">
+              value="{{Blog.content}}">
           </div>
-          <button id="submitUpdateBtn" class="btn btn-sm btn-danger" data-update-id="{{post.id}}">UPDATE</button>
+          <button id="submitUpdateBtn" class="btn btn-sm btn-danger" data-update-id="{{blog.id}}">UPDATE</button>
           <button id="cancelUpdateBtn" class="btn btn-sm btn-danger">CANCEL</button>
         </form>
       </div>
@@ -49,19 +49,19 @@
   {{else}}
   <div class="col-md-6 d-flex justify-content-center">
 
-    <div id="createPostBtnDiv">
-      <button id="createPostBtn" class="btn btn-primary"> Create a Post</button>
+    <div id="createBlogBtnDiv">
+      <button id="createBlogBtn" class="btn btn-primary"> Create a Blog</button>
     </div>
 
-    <div id="createPostDiv" class="hide">
-      <h3>Create a New Post:</h3>
+    <div id="createBlogDiv" class="hide">
+      <h3>Create a New Blog:</h3>
       <form class="form new-blog-form">
         <div class="form-group">
-          <label for="blog-title">insert post title:</label>
+          <label for="blog-title">insert blog title:</label>
           <input class="form-control" type="text" id="blog-title" name="blog-title" />
         </div>
         <div class="form-group">
-          <label for="blog-desc">create post description:</label>
+          <label for="blog-desc">create blog description:</label>
           <textarea class="form-control" id="blog-desc" name="blog-desc"></textarea>
         </div>
         <div class="form-group">
@@ -75,4 +75,4 @@
   {{/if}}
 </div>
 
-<script src="./js/post.js"></script>
+<script src="./js/blog.js"></script>
