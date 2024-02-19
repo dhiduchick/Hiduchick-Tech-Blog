@@ -86,3 +86,10 @@ const updateViewHandler = () => {
     currentPostDiv.classList.add('hide');
   }
   
+const cancelUpdateHandler = (event) => {
+    event.preventDefault();
+    const updateForm = document.getElementById('updateForm');
+    updateForm.classList.add('hide');
+    const currentPostDiv = document.getElementById('indivPost');
+    currentPostDiv.classList.remove('hide');
+  }  
