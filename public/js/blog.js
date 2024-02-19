@@ -61,3 +61,7 @@ const delButtonHandler = async (event) => {
     }
 };
 
+const createPostView = () => {
+    const createPostBtnDiv = document.getElementById('createPostBtnDiv').classList.add('hide');
+    const createPostDiv = document.getElementById('createPostDiv').classList.remove('hide');
+  }
