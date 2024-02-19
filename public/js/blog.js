@@ -73,3 +73,8 @@ const cancelBtnHandler = (event) => {
     const titleInput = document.getElementById('project-name').value = "";
     const descriptionInput = document.getElementById('project-desc').value = "";
   }
+
+const editBtnHandler = () => {
+    const editPostBtnDiv = document.getElementById('editPostBtnDiv').classList.add('hide');
+    const updateDeleteDiv = document.getElementById('updateDeleteDiv').classList.remove('hide');
+  }  
