@@ -32,3 +32,14 @@ const submitCommentHandler = async (event) => {
       alert("Something is missing, please try again.")
     }
   }
+
+  const commentBtn = document.getElementById('comment');
+if (commentBtn) {
+  commentBtn.addEventListener('click', addCommentHandler);
+}
+
+const submitCommentBtn = document.getElementById('submit-comment');
+if (submitCommentBtn) {
+  submitCommentBtn.addEventListener('click', submitCommentHandler);
+}
+
