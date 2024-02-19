@@ -1,0 +1,39 @@
+<div class="text-center">
+  <div class="d-flex justify-content-center">
+    <div class="post-card border border-light">
+      <h2 class="post-title">{{title}}</h2>
+      <p class="post-content">{{content}}</p>
+      <p class="post-tag">Created by {{user.name}} on {{format_date date_created}}</p>
+    </div>
+  </div>
+  {{#if comments.length}}
+  {{#each comments as |comment| }}
+  <div class="d-flex justify-content-center">
+    <div class="comment-card border border-info">
+      <p class="post-content">{{comment.content}}</p>
+      <p class="post-tag">Commented by {{comment.user.name}} on {{format_date comment.date_created}}</p>
+    </div>
+  </div>
+  {{/each}}
+  {{/if}}
+  {{#if logged_in}}
+  <p>
+    <button class="btn btn-primary" id="comment">Leave a Comment</button>
+  </p>
+  <form class="d-flex justify-content-center">
+    <div id="comment-div" class="form-group comment-card border border-light hide">
+      <label id="add-comment-label">Add Comment:</label>
+      <input data-postId="{{id}}" class="form-control" type="text" id="add-comment-textbox" />
+          <button id="submit-comment" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+
+  {{else}}
+  <p>
+    <button class="btn btn-primary" onclick="location.href='/login'">Leave a Comment</button>
+  </p>
+
+  {{/if}}
+</div>
+
+<script src="../js/comment.js"></script>
