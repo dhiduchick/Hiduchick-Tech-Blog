@@ -78,3 +78,11 @@ const editBtnHandler = () => {
     const editPostBtnDiv = document.getElementById('editPostBtnDiv').classList.add('hide');
     const updateDeleteDiv = document.getElementById('updateDeleteDiv').classList.remove('hide');
   }  
+
+const updateViewHandler = () => {
+    const updateForm = document.getElementById('updateForm');
+    updateForm.classList.remove('hide');
+    const currentPostDiv = document.getElementById('indivPost');
+    currentPostDiv.classList.add('hide');
+  }
+  
