@@ -1,0 +1,78 @@
+<div class="row justify-content-center">
+  <div class="col-auto">
+    <h2>Welcome to Your Dashboard, {{name}}!</h2>
+  </div>
+</div>
+
+<div class="row mt-4 justify-content-center">
+
+  {{#if posts.length}}
+  <div id="currentPostsDiv" class="col-md-6 project-list justify-content-center">
+    <h3 class="d-flex justify-content-center">Current Posts:</h3>
+
+    {{#each posts as |post|}}
+    <div class="row mb-2 d-flex justify-content-center">
+      <div id="indivPost" class="container" >
+        <div class="currentPostCard">
+          <h4 class="d-flex justify-content-center"><a class="postTitle hover-effect" href="/post/{{post.id}}">{{post.title}}</a></h4>
+        </div>
+        <div id="editPostBtnDiv" class="container editPostBtnDiv">
+          <button id="editPostBtn" class=" center toggleEdit btn btn-sm btn-danger">EDIT</button>
+        </div>
+        <div id="updateDeleteDiv" class="hide container">
+          <div class="center">
+            <button id="updatePostBtn" class="btn btn-sm btn-danger">UPDATE</button>
+            <button id="deletePostBtn" class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
+            <button id="cancelEditBtn" class="btn btn-sm btn-danger">CANCEL</button>
+          </div>
+        </div>
+      </div>
+      <div>
+        <form id="updateForm" class="hide">
+          <div class="form-group">
+            <label for="updated-title">Title:</label>
+            <input class="form-control" id="updatedPostTitle" type="text" name="updated-title" value="{{post.title}}">
+          </div>
+          <div class="form-group">
+            <label for="updated-title">Description:</label>
+            <input class="form-control" id="updatedPostContent" type="text" name="updated-title"
+              value="{{post.content}}">
+          </div>
+          <button id="submitUpdateBtn" class="btn btn-sm btn-danger" data-update-id="{{post.id}}">UPDATE</button>
+          <button id="cancelUpdateBtn" class="btn btn-sm btn-danger">CANCEL</button>
+        </form>
+      </div>
+    </div>
+    {{/each}}
+
+  </div>
+  {{else}}
+  <div class="col-md-6 d-flex justify-content-center">
+
+    <div id="createPostBtnDiv">
+      <button id="createPostBtn" class="btn btn-primary"> Create a Post</button>
+    </div>
+
+    <div id="createPostDiv" class="hide">
+      <h3>Create a New Post:</h3>
+      <form class="form new-project-form">
+        <div class="form-group">
+          <label for="project-name">insert post title:</label>
+          <input class="form-control" type="text" id="project-name" name="project-name" />
+        </div>
+        <div class="form-group">
+          <label for="project-desc">create post description:</label>
+          <textarea class="form-control" id="project-desc" name="project-desc"></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Create</button>
+          <button id="cancelCreateBtn" class="btn btn-primary">Cancel</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+  {{/if}}
+</div>
+
+<script src="./js/post.js"></script>
