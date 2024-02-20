@@ -23,9 +23,9 @@ router.get('/', async (req,res) => {
     }
 });
 
-router.get('/post/:id', async (req, res) => {
+router.get('/blog/:id', async (req, res) => {
     try {
-      const postData = await Post.findByPk(req.params.id, {
+      const blogData = await Blog.findByPk(req.params.id, {
         include: [
           {
             model: User,
@@ -37,10 +37,10 @@ router.get('/post/:id', async (req, res) => {
         ],
       });
   
-      const post = await postData.get({ plain: true });
+      const blog = await blogData.get({ plain: true });
   
-      res.render('post', {
-        ...post,
+      res.render('blog', {
+        ...blog,
         logged_in: req.session.logged_in
       });
     } catch (err) {
@@ -52,7 +52,7 @@ router.get('/post/:id', async (req, res) => {
     try {
         const userData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
-            include: [{ model: Post }],
+            include: [{ model: Blog }],
           });
       
           const user = userData.get({ plain: true });

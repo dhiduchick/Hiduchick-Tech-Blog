@@ -70,8 +70,8 @@ const cancelBtnHandler = (event) => {
     event.preventDefault();
     const createBlogBtnDiv = document.getElementById('createBlogBtnDiv').classList.remove('hide');
     const createBlogDiv = document.getElementById('createBlogDiv').classList.add('hide');
-    const titleInput = document.getElementById('project-name').value = "";
-    const descriptionInput = document.getElementById('project-desc').value = "";
+    const titleInput = document.getElementById('blog-name').value = "";
+    const descriptionInput = document.getElementById('blog-desc').value = "";
   }
 
 const editBtnHandler = () => {
@@ -131,12 +131,12 @@ if (updateBlog) {
   updateBlog.addEventListener('click', updateBlogHandler)
 }
 
-const submitBlog = document.querySelector('.new-project-form');
+const submitBlog = document.querySelector('.new-blog-form');
 if (submitBlog) {
   submitBlog.addEventListener('submit', newFormHandler);
 }
 
-const deleteBlog = document.querySelector('.project-list');
+const deleteBlog = document.querySelector('.blog-list');
 if (deleteBlog) {
   deleteBlog.addEventListener('click', delButtonHandler);
 }
