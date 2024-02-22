@@ -13,13 +13,13 @@ router.get('/', async (req,res) => {
         ],
     });
     const blogs = blogData.map((blog) => blog.get({plain:true}));
-
+console.log(blogs)
     res.render('homepage', {
         blogs,
         logged_in: req.session.logged_in
     });
     }catch (err) {
-        res.status(500).jsono(err);
+        res.status(500).json(err);
     }
 });
 
@@ -38,7 +38,6 @@ router.get('/blog/:id', async (req, res) => {
       });
   
       const blog = await blogData.get({ plain: true });
-  
       res.render('blog', {
         ...blog,
         logged_in: req.session.logged_in

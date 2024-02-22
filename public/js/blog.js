@@ -3,13 +3,13 @@ const newFormHandler = async (event) => {
 
     const title = document.querySelector('#blog-title').value.trim();
     const content = document.querySelector('#blog-desc').value.trim();
-
+console.log(title);
     if (title && content) {
         const response = await fetch('/api/blogs', {
             method: 'POST',
             body: JSON.stringify({title,content}),
             headers: {
-                'Content-Type': 'applicaiton/json',
+                'Content-Type': 'application/json',
             },
         });
 
@@ -24,16 +24,16 @@ const newFormHandler = async (event) => {
 const updateBlogHandler = async (event) => {
 event.preventDefault();
 if (event.target.hasAttribute('data-update-id')) {
-    const id = event.taget.getAttribute('data-update-id');
+    const id = event.target.getAttribute('data-update-id');
 
     const title = document.getElementById('updatedBlogTitle').value.trim();
-    const content = document.getElementById('updateBlogContent').value.trim();
-
-    const response = await fetch(`/api.blogs/${id}`, {
+    const content = document.getElementById('updatedBlogContent').value.trim();
+console.log(content)
+    const response = await fetch(`/api/blogs/${id}`, {
         method: 'PUT',
         body: JSON.stringify({title, content}),
         headers: {
-            'Content-Types': 'application/json',
+            'Content-Type': 'application/json',
         },
     });
 
