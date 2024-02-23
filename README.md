@@ -11,17 +11,28 @@ The deployed application can be accessed here.
 
 ## Screenshots
 Below are screenshots demonstrating the application's functionality:
-
-Login/Signup
 Homepage
+![homepage](./assets/homepage.png)
+Login/Signup
+![login/signup](./assets/login%20:%20signup.png)
 Dashboard
+![dashboard](./assets/dashboard.png)
 Create a Post
+![create](./assets/create%20a%20new%20blog.png)
 Dashboard with Post
+![dash-w/post](./assets/dashboard%20with%20post.png)
+![first-post](./assets/first%20comment.png)
 Post Options
+![post-option](./assets/edit%20options.png)
 Post Update
+![update](./assets/update.png)
+![finish-update](./assets/finish%20update.png)
 Leave Comment
+![comment](./assets/add%20comment.png)
 Post With Comment
-Technologies Used
+![postcomment](./assets/post%20with%20comment.png)
+
+## Technologies Used
 HTML (Handlebars.js)
 JavaScript
 CSS
