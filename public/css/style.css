@@ -1,5 +1,7 @@
 body {
     margin: 15px;
+    background-color: rgb(249, 221, 225);
+    font-family: 'Indie Flower', sans-serif;
 }
 
 .hide {
@@ -10,7 +12,10 @@ body {
     text-decoration: none;
     color: black;
     font-family: 'Indie Flower', sans-serif;
-    font-size: 100px;
+    font-size: 75px;
+    padding-bottom: 10px;
+    background-color: rgb(97, 134, 97);
+    border-radius: 30px 30px 0% 30px;
 }
 
 .h2 {
@@ -21,7 +26,7 @@ body {
 }
 
 .home-cards {
-    background-color: rgb(147, 168, 150);
+    background-color: rgb(114, 152, 120);
     border-radius: 30px 30px 0% 30px;
 }
 
@@ -100,6 +105,13 @@ body {
 #noPosts {
     margin-top: 100px;
     text-align: center;
+}
+
+.navbar {
+    background-color: rgb(97, 134, 97);
+    font-family:'Indie Flower', sans-serif ;
+    border-radius: 30px 30px 0% 30px;
+    font-size: 22px;
 }
 
 .post-content {
